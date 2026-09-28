@@ -41,7 +41,7 @@ export default function ToolCard({ tool, type }) {
     <button
       type="button"
       onClick={() => navigate(`/tool/${tool.id}/upload`)}
-      className="flex min-h-[205px] flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg"
+      className="flex min-h-[155px] min-w-0 flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white p-3 text-center shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg sm:min-h-[205px] sm:p-5"
     >
       <div
         className={`flex h-14 w-14 items-center justify-center rounded-xl ${
@@ -53,11 +53,11 @@ export default function ToolCard({ tool, type }) {
         <Icon size={28} strokeWidth={2.2} />
       </div>
 
-      <h3 className="mt-5 text-base font-bold leading-6 text-slate-900">
+      <h3 className="mt-3 text-sm font-bold leading-5 text-slate-900 sm:mt-5 sm:text-base sm:leading-6">
         {tool.name}
       </h3>
 
-      <p className="mt-1 text-sm text-slate-500">
+      <p className="mt-1 text-xs text-slate-500 sm:text-sm">
         {tool.description}
       </p>
     </button>

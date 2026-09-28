@@ -120,7 +120,7 @@ function ToolGroup({ title, type, tools, id }) {
       }`}
     >
       {/* Header */}
-      <div className="mb-4 flex items-center justify-between">
+      <div className="mb-4 flex items-center justify-between gap-2">
         <div className="flex items-center gap-3">
           <div
             className={`flex h-11 w-11 items-center justify-center rounded-xl ${
@@ -136,7 +136,7 @@ function ToolGroup({ title, type, tools, id }) {
             )}
           </div>
 
-          <h2 className="text-[22px] font-extrabold text-slate-900">
+          <h2 className="text-lg font-extrabold text-slate-900 sm:text-[22px]">
             {title}
           </h2>
         </div>
@@ -151,7 +151,7 @@ function ToolGroup({ title, type, tools, id }) {
       </div>
 
       {/* 4 × 2 grid */}
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4">
         {tools.map((tool) => (
           <ToolCard
             key={tool.id}

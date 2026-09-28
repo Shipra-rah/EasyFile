@@ -206,8 +206,8 @@ export default function ToolWork() {
   };
 
   return (
-    <div className="h-screen overflow-hidden bg-slate-50">
-      <main className="mx-auto flex h-full w-full max-w-[1500px] flex-col px-4 py-4 sm:px-6 lg:px-8">
+    <div className="min-h-dvh overflow-x-hidden bg-slate-50 md:h-dvh md:overflow-hidden">
+      <main className="mx-auto flex min-h-dvh w-full max-w-[1500px] flex-col px-3 py-3 sm:px-6 sm:py-4 lg:px-8 md:h-full md:min-h-0">
         {/* TOP BAR */}
         <div className="flex h-12 shrink-0 items-center justify-between">
           {/* BACK */}
@@ -253,7 +253,7 @@ export default function ToolWork() {
         </div>
 
         {/* WORKSPACE */}
-        <div className="min-h-0 flex-1 py-3">{renderEditor()}</div>
+        <div className="min-h-[65dvh] flex-1 py-3 md:min-h-0">{renderEditor()}</div>
       </main>
     </div>
   );

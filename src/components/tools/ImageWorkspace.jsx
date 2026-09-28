@@ -964,18 +964,18 @@ export default function ImageWorkspace({ file, onResult }) {
   };
 
   return (
-    <div className="flex h-full min-h-0 items-center justify-center bg-[#e9edf3] p-2 sm:p-4">
-      <div className="flex h-full min-h-0 w-full max-w-[1500px] overflow-hidden rounded-[24px] border border-slate-300 bg-[#f8fafc] shadow-[0_30px_100px_-35px_rgba(15,23,42,0.35)]">
+    <div className="flex min-h-full items-stretch justify-center bg-[#e9edf3] p-2 sm:p-4 lg:h-full lg:min-h-0 lg:items-center">
+      <div className="flex min-h-full w-full max-w-[1500px] flex-col overflow-hidden rounded-[24px] border border-slate-300 bg-[#f8fafc] shadow-[0_30px_100px_-35px_rgba(15,23,42,0.35)] lg:h-full lg:min-h-0 lg:flex-row">
 
         {/* TOOL RAIL */}
-        <aside className="w-[82px] shrink-0 border-r border-slate-200 bg-white">
-          <div className="flex h-full flex-col items-center py-3">
+        <aside className="flex h-[78px] w-full shrink-0 border-b border-slate-200 bg-white lg:h-full lg:w-[82px] lg:border-b-0 lg:border-r">
+          <div className="flex h-full min-w-0 w-full flex-row items-center gap-2 px-3 py-2 lg:flex-col lg:gap-0 lg:px-0 lg:py-3">
 
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white">
+            <div className="mb-0 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-white lg:mb-4">
               <SlidersHorizontal size={18} />
             </div>
 
-            <div className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-1.5">
+            <div className="flex min-w-0 flex-1 flex-row gap-1 overflow-x-auto overflow-y-hidden px-1.5 lg:min-h-0 lg:flex-col lg:overflow-x-hidden lg:overflow-y-auto">
               {TOOLS.map((tool) => {
                 const Icon = tool.icon;
                 const active =
@@ -989,7 +989,7 @@ export default function ImageWorkspace({ file, onResult }) {
                       setActiveTool(tool.id);
                       setDone(false);
                     }}
-                    className={`group flex w-[68px] flex-col items-center gap-1.5 rounded-xl px-2 py-2.5 transition ${
+                    className={`group flex w-[68px] shrink-0 flex-col items-center gap-1.5 rounded-xl px-2 py-2.5 transition ${
                       active
                         ? "bg-slate-900 text-white shadow-sm"
                         : "text-slate-500 hover:bg-slate-100"
@@ -1015,7 +1015,7 @@ export default function ImageWorkspace({ file, onResult }) {
         </aside>
 
         {/* CENTER WORKSPACE */}
-        <section className="flex min-w-0 flex-1 flex-col bg-[#171717]">
+        <section className="flex min-h-[55dvh] min-w-0 flex-1 flex-col bg-[#171717] lg:min-h-0">
 
           {/* TOP BAR */}
           <div className="flex h-12 shrink-0 items-center justify-between border-b border-white/10 px-4">
@@ -1261,7 +1261,7 @@ export default function ImageWorkspace({ file, onResult }) {
         </section>
 
         {/* CONTROL PANEL */}
-        <aside className="flex w-[360px] shrink-0 flex-col border-l border-slate-200 bg-[#f8fafc]">
+        <aside className="flex max-h-[45dvh] w-full shrink-0 flex-col overflow-y-auto border-t border-slate-200 bg-[#f8fafc] lg:max-h-none lg:w-[360px] lg:border-l lg:border-t-0">
 
           {/* PANEL HEADER */}
           <div className="flex h-12 shrink-0 items-center justify-between border-b border-slate-200 px-4">

@@ -144,8 +144,8 @@ export default function ToolUpload() {
         </div>
 
         {/* Heading */}
-        <div className="mt-8 text-center">
-          <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
+        <div className="mt-6 text-center sm:mt-8">
+          <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
             {tool?.name}
           </h1>
 
@@ -155,12 +155,12 @@ export default function ToolUpload() {
         </div>
 
         {/* Attractive upload box */}
-        <div className="mx-auto mt-8 w-full max-w-xl">
+        <div className="mx-auto mt-6 w-full max-w-xl sm:mt-8">
           <label
             htmlFor="file-upload"
             className="group relative block cursor-pointer overflow-hidden rounded-3xl border border-slate-200 bg-white p-2 shadow-[0_20px_60px_-20px_rgba(15,23,42,0.15)] transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 hover:shadow-[0_25px_70px_-20px_rgba(79,70,229,0.22)]"
           >
-            <div className="flex min-h-[280px] flex-col items-center justify-center rounded-[22px] bg-gradient-to-br from-indigo-50 via-white to-blue-50 px-6 py-8 text-center">
+            <div className="flex min-h-[240px] flex-col items-center justify-center rounded-[22px] bg-gradient-to-br from-indigo-50 via-white to-blue-50 px-4 py-7 text-center sm:min-h-[280px] sm:px-6 sm:py-8">
               {/* Upload icon */}
               <div className="relative">
                 <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-white text-indigo-600 shadow-lg shadow-indigo-100 transition-transform duration-300 group-hover:scale-110">
@@ -172,7 +172,7 @@ export default function ToolUpload() {
                 </div>
               </div>
 
-              <h2 className="mt-6 text-xl font-extrabold text-slate-900">
+              <h2 className="mt-5 text-lg font-extrabold text-slate-900 sm:mt-6 sm:text-xl">
                 Drop your file here
               </h2>
 
@@ -184,7 +184,7 @@ export default function ToolUpload() {
                 Choose File
               </div>
 
-              <div className="mt-5 flex items-center gap-2 text-xs text-slate-400">
+              <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-xs text-slate-400">
                 <span>Fast</span>
                 <span>•</span>
                 <span>Easy to use</span>
