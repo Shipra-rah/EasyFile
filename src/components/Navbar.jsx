@@ -1,3 +1,4 @@
+import logo from "../../public/Logo1.jpeg";
 import { FileImage, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -37,9 +38,6 @@ export default function Navbar() {
 
   function handleAnchorClick() {
     closeMenu();
-
-    // On the home page, let the browser scroll normally.
-    // On another page, React Router navigates back to home first.
   }
 
   // Close mobile menu whenever the route changes.
@@ -68,20 +66,15 @@ export default function Navbar() {
       isHome;
 
     const commonClass = `
-      group relative flex items-center
-      text-sm font-semibold
-      transition-colors duration-200
-      ${
-        mobile
-          ? "w-full rounded-xl px-4 py-3"
-          : "px-1 py-2"
+      group relative flex items - center
+text - sm font - semibold
+transition - colors duration - 200
+      ${mobile ? "w-full rounded-xl px-4 py-3" : "px-1 py-2"}
+      ${active
+        ? "text-emerald-700"
+        : "text-slate-600 hover:text-slate-950"
       }
-      ${
-        active
-          ? "text-emerald-700"
-          : "text-slate-600 hover:text-slate-950"
-      }
-    `;
+`;
 
     if (item.type === "route") {
       return (
@@ -115,39 +108,27 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex h-[72px] w-[92%] max-w-[1440px] items-center justify-between">
-        {/* =====================================================
-            LOGO
-        ===================================================== */}
+
+        {/* Logo */}
         <Link
           to="/"
           onClick={closeMenu}
-          className="group flex items-center gap-3"
+          className="group flex items-center"
           aria-label="EasyFile home"
         >
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-950 text-white shadow-sm transition duration-200 group-hover:scale-[1.03] group-hover:bg-emerald-700">
-            <FileImage size={20} strokeWidth={2.3} />
-          </span>
-
-          <span className="text-[21px] font-extrabold tracking-tight text-slate-950">
-            Easy
-            <span className="text-emerald-600">
-              File
-            </span>
-          </span>
+          <img
+            src={logo}
+            alt="EasyFile"
+            className="h-10 w-auto object-contain transition duration-200 group-hover:scale-[1.03]"
+          />
         </Link>
 
-        {/* =====================================================
-            DESKTOP NAVIGATION
-        ===================================================== */}
+        {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 lg:flex">
-          {navItems.map((item) =>
-            renderNavLink(item),
-          )}
+          {navItems.map((item) => renderNavLink(item))}
         </nav>
 
-        {/* =====================================================
-            DESKTOP ACTIONS
-        ===================================================== */}
+        {/* Desktop Actions */}
         <div className="hidden items-center gap-3 lg:flex">
           <button
             type="button"
@@ -164,35 +145,25 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* =====================================================
-            MOBILE MENU BUTTON
-        ===================================================== */}
+        {/* Mobile Menu Button */}
         <button
           type="button"
           onClick={() => setOpen((value) => !value)}
-          aria-label={
-            open ? "Close menu" : "Open menu"
-          }
+          aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition hover:bg-slate-50 hover:text-slate-950 lg:hidden"
         >
-          {open ? (
-            <X size={21} />
-          ) : (
-            <Menu size={21} />
-          )}
+          {open ? <X size={21} /> : <Menu size={21} />}
         </button>
       </div>
 
-      {/* =======================================================
-          MOBILE MENU
-      ======================================================= */}
+      {/* Mobile Menu */}
       {open && (
         <div className="absolute left-0 right-0 top-[72px] border-b border-slate-200 bg-white shadow-lg lg:hidden">
           <div className="mx-auto w-[92%] max-w-[1440px] py-4">
             <nav className="flex flex-col gap-1">
               {navItems.map((item) =>
-                renderNavLink(item, true),
+                renderNavLink(item, true)
               )}
 
               <div className="mt-3 grid grid-cols-2 gap-3 border-t border-slate-200 pt-4">
